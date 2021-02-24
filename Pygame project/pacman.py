@@ -11,9 +11,9 @@ pygame.display.set_caption("Pek Mann")
 
 x = 100
 y = 110
-width = 40
-height = 40
-vel = 5
+width = 10
+height = 10
+vel = 10
 
 run = True
 while run:
@@ -23,13 +23,13 @@ while run:
         if event.type == pygame.QUIT:
             run = False
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_LEFT] and x > vel:
+    if keys[pygame.K_LEFT] and x < screenWidth and x > 0:
         x -= vel
-    if keys[pygame.K_RIGHT] and x < screenWidth - width - vel:
+    if keys[pygame.K_RIGHT] and x < screenWidth - width:
         x += vel
-    if keys[pygame.K_UP] and y > vel:
+    if keys[pygame.K_UP] and y < screenHeight and y > 0:
         y -= vel
-    if keys[pygame.K_DOWN] and y < screenHeight - height -vel:
+    if keys[pygame.K_DOWN] and y < screenHeight - height:
         y += vel
 
         
